@@ -8,18 +8,27 @@ namespace ConsoleApp1
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            //Két szám bekérése, majd összeadása
-            Console.WriteLine("Írj be egy számot, majd üss entert!");
-            int a = int.Parse(Console.ReadLine());
-            Console.WriteLine("Írj be még egy számot, majd üss megint entert!");
-            int b = int.Parse(Console.ReadLine());
+            //Két szám bekérése
+            int szam_1 = szamotKer("Írj be egy számot, majd üss entert!\t");
+            int szam_2 = szamotKer("Írj be még egy számot, majd üss megint entert!\t");
 
-            int c = a + b;
-            Console.WriteLine("A beírt két szám összege: " + c);
+            //Művelet
+            int osszeg = szam_1 + szam_2;
+            //Kiírás
+            Console.WriteLine("\nA beírt két szám összege: " + osszeg);
 
             Console.ReadKey();
+        }
+
+        private static int szamotKer(string szoveg)
+        {
+            int BekertSzam;
+            Console.Write(szoveg);
+            BekertSzam = int.Parse(Console.ReadLine());
+            return BekertSzam;
         }
     }
 }
